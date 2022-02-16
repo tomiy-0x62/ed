@@ -23,8 +23,8 @@ mandir='$(datarootdir)/man'
 program_prefix=
 CC=gcc
 CPPFLAGS=
-CFLAGS='-Wall -W -O2'
-LDFLAGS=
+CFLAGS='-Wall -W -Og -static -fuse-ld=lld -z norelro'
+LDFLAGS='-z norelro -static -Wl,--image-base=0x8000000'
 
 # checking whether we are using GNU C.
 /bin/sh -c "${CC} --version" > /dev/null 2>&1 || { CC=cc ; CFLAGS=-O2 ; }
