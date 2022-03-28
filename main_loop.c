@@ -16,7 +16,7 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <ctype.h>
+// #include <ctype.h>
 #include <errno.h>
 #include <limits.h>
 #include <setjmp.h>
@@ -26,6 +26,20 @@
 
 #include "ed.h"
 
+int isspace(int c) {
+    if (c == 32) {
+        return true;
+    } else {
+        return false;
+    }
+}
+int isdigit(int c) {
+    if (c > 0x30 && c < 0x39) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 enum Status { QUIT = -1, ERR = -2, EMOD = -3, FATAL = -4 };
 
