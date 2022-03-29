@@ -34,14 +34,14 @@ int isspace(int c) {
         case '\r':
         case '\t':
         case '\v':
-            return true:
+            return true;
         default :
-            return false:
+            return false;
     }
 }
 
 int isdigit(int c) {
-    if (c > 0x30 && c < 0x39) {
+    if (c >= 0x30 && c <= 0x39) {
         return true;
     } else {
         return false;
