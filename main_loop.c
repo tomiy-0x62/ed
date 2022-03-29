@@ -27,12 +27,19 @@
 #include "ed.h"
 
 int isspace(int c) {
-    if (c == 32) {
-        return true;
-    } else {
-        return false;
+    switch(c) {
+        case ' ':
+        case '\f':
+        case '\n':
+        case '\r':
+        case '\t':
+        case '\v':
+            return true:
+        default :
+            return false:
     }
 }
+
 int isdigit(int c) {
     if (c > 0x30 && c < 0x39) {
         return true;
